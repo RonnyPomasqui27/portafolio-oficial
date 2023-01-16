@@ -1,0 +1,151 @@
+.social_contaiener {
+  position: absolute;
+  z-index: 3;
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2%;
+}
+
+.social_contaiener a {
+  font-size: 2.2rem;
+  color: #fff;
+  text-decoration: none;
+  transform: scale(1);
+  transition: 0.4s;
+}
+
+.social_contaiener a:hover {
+  transform: scale(1.2);
+}
+
+
+.presentation_container {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  margin-top: 12%;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.present {
+  width: 50%;
+  padding: 20px 30px;
+  background: rgba(3, 3, 3, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.present_txt:nth-child(1) {
+  font-size: 2rem;
+}
+
+.present_txt:nth-child(2) {
+  font-size: 3rem;
+}
+
+.present_txt:nth-child(3) {
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+
+.links {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.links a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 5px 20px;
+  border: 1px solid #fff;
+  color: white;
+  font-weight: 200;
+  position: relative;
+  overflow: hidden;
+}
+
+.links a::after {
+  content: '';
+  inset: 0;
+  position: absolute;
+  background: rgba(248, 93, 73, 0.3);
+  transform: translateX(-100%);
+  transition: 1s;
+}
+
+.links a:hover::after {
+  transform: translateX(0%);
+}
+
+.nave {
+  width: 300px;
+  object-fit: contain;
+  /* position: absolute; */
+  animation: nave 4s infinite alternate linear;
+}
+
+@media (max-width:690px) {
+
+  .nave{
+    display: none;
+  }
+
+  .presentation_container {
+    margin-top: 50%;
+    padding: 10px;
+  }
+
+  .present {
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .links {
+    width: 100%;
+  }
+
+  .social_contaiener {
+    width: 95%;
+    margin-top: 130%;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .nave {
+    position: absolute;
+    inset: 0;
+    width: 230px;
+    margin-left: 33%;
+    margin-top: 5%;
+    animation: none;
+    z-index: -1;
+  }
+}
+
+@keyframes nave {
+  from {
+    transform: translateY(-10px);
+  }
+
+  to {
+    transform: translateY(10px);
+  }
+}
